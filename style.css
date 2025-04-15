@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    background-image: url('./Pics/Hintergrund-ISS.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Hind', sans-serif;
+    background-color: #f2f4f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    min-height: 100vh;
+    padding: 20px 20px 20px 100px; /* oben, rechts, unten, links */
+}
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 300px;
+    height: auto;
+    z-index: 1000;
+}
+
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap');
+
+/* Titel */
+h1 {
+    font-size: 3rem;
+    margin: 150px 0 20px; /* Abstand oben, rechts, unten */
+    text-align: left;
+    color: white;
+    font-family: 'k2d', sans-serif;
+}
+
+/* p Tags */ 
+p {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.1rem;
+    margin: 0px 0 20px; /* Abstand oben, rechts, unten */
+    text-align: left;
+    color: white;
+    font-weight: 300;
+}
+
+/* Kartencontainer */
+.map-container {
+    width: 600px;
+    height: 60vh;
+    margin: 0; /* statt "0 auto" */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+}
+
+/* Neuer Container-Stil für .map-and-controls */
+.map-and-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Karte selbst */
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+
+#timestamp {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: white;
+    text-align: center;
+}
+
+/* Anpassungen für .map-controls */
+.map-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+.map-controls p {
+    margin-bottom: 8px;
+  color: white;
+  font-weight: bold;
+}
+.intro {
+    margin-bottom: 40px;
+  }
+  
+  .map-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+.map-controls button {
+  background-color: #f06292; 
+  border: none;
+  border-radius: 999px;
+  color: #1a125b;
+  font-size: 1rem;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 500;
+  padding: 10px 24px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.map-controls button:hover {
+    background-color: transparent;
+    color: white; 
+    border: 2px solid white;
+  }
+
+.map-controls button.active {
+  background-color: #1a125b;
+  color: white;
+  border: 3px solid white;
+  font-weight: 600;
+}
+
+
+/* ---------------------------------- */
+/*              MOBILE                */
+/* ---------------------------------- */
+@media (max-width: 768px) {
+    body {
+      padding: 40px;
+      align-items: left;
+    }
+  
+    .logo {
+        
+      width: 350px;
+      top: 15px;
+      left: 15px;
+    }
+  
+    h1 {
+      font-size: 2rem;
+      text-align: left;
+
+    }
+  
+    .intro,
+    p,
+    #timestamp {
+      text-align: left;
+      margin-left: left;
+      margin-right: auto;
+    }
+  
+    .map-section {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .map-container {
+      width: 50vh;
+      height: 50vh;
+    }
+  
+
+.map-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  justify-items: center;
+}
+  
+    .map-controls button {
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+    }
+  }

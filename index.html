@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>follow-ISS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=K2D:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    
+    <img src="./Pics/logo.png" alt="ISS Logo" class="logo" />
+    <h1>In an Orbit far far away...</h1>
+
+    <div class="intro">
+      <p>Follow our international space station <br>on her journey around our home planet </p>
+    </div>
+
+    <div class="map-section">
+      <div class="map-container">
+        <div id="map"></div>
+      </div>
+      
+      <div class="map-controls">
+        <p><strong>Map Design:</strong></p>
+        <button onclick="setMap('dark')">Night Mode</button>
+        <button onclick="setMap('light')">Day Mode</button>
+        <button onclick="setMap('satellite')">Satellite View</button>
+        <button onclick="setMap('flat')">Flat Map</button>
+      </div>
+    </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+
+  <div id="timestamp" style="margin-top: 10px; font-size: 0.9rem; color: white;">
+    Last refresh: loading...
+  </div>
+  
+  </body>
+  </html>
