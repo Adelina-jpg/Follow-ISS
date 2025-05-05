@@ -38,6 +38,7 @@ h1 {
     text-align: left;
     color: white;
     font-family: 'k2d', sans-serif;
+    line-height: 1;
 }
 
 /* p Tags */ 
@@ -101,7 +102,7 @@ p {
   font-weight: bold;
 }
 .intro {
-    margin-bottom: 40px;
+    margin-bottom: 5px;
   }
   
   .map-section {
@@ -158,7 +159,7 @@ p {
     }
   
     h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       text-align: left;
 
     }
@@ -178,8 +179,9 @@ p {
     }
   
     .map-container {
-      width: 50vh;
-      height: 50vh;
+      width: 80vw;
+      height: 30vh;
+      margin: 0 auto;
     }
   
 
