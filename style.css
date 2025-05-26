@@ -1,200 +1,179 @@
+:root {
+  --bg-dark: #1a125b;
+  --accent-pink: #f06292;
+  --radius: 0.5rem;
+  --padding: 1rem;
+  --font-body: "Lexend", sans-serif;
+  --font-heading: "K2D", sans-serif;
+}
+
+/* Reset & Box Model */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-  
+
+/* Base Styles */
 body {
-    background-image: url('./Pics/Hintergrund-ISS.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: 'Hind', sans-serif;
-    background-color: #f2f4f8;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: start;
-    min-height: 100vh;
-    padding: 20px 20px 20px 100px; /* oben, rechts, unten, links */
-}
-.logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 300px;
-    height: auto;
-    z-index: 1000;
-}
-
-/* Google Fonts import */
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap');
-
-/* Titel */
-h1 {
-    font-size: 3rem;
-    margin: 150px 0 20px; /* Abstand oben, rechts, unten */
-    text-align: left;
-    color: white;
-    font-family: 'k2d', sans-serif;
-    line-height: 1;
-}
-
-/* p Tags */ 
-p {
-    font-family: 'Lexend', sans-serif;
-    font-size: 1.1rem;
-    margin: 0px 0 20px; /* Abstand oben, rechts, unten */
-    text-align: left;
-    color: white;
-    font-weight: 300;
-}
-
-/* Kartencontainer */
-.map-container {
-    width: 600px;
-    height: 60vh;
-    margin: 0; /* statt "0 auto" */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-    overflow: hidden;
-    background: #fff;
-}
-
-/* Neuer Container-Stil für .map-and-controls */
-.map-and-controls {
+  background: url("../images/background.png") center/cover no-repeat, #f2f4f8;
+  font-family: var(--font-body);
+  color: #fff;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  padding: 20px 20px 20px 100px;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  position: relative;
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
-/* Karte selbst */
-#map {
-    width: 100%;
-    height: 100%;
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 300px;
+  z-index: 1000;
 }
 
-
-#timestamp {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: white;
-    text-align: center;
+h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: #fff;
+  margin: 150px 0 0;
+  line-height: 1;
 }
 
-/* Anpassungen für .map-controls */
+.intro {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-top: 1rem;
+  color: #fff;
+}
+
+/* Tracker Section */
+.iss-tracker {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  /* allow wrapping on narrower viewports */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.map-container {
+  /* fixed size with responsive cap */
+  width: 600px;
+  max-width: 80vw;
+  height: 60vh;
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Controls */
 .map-controls {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 1rem;
-  align-self: flex-start;
+  gap: 0.5rem;
 }
 
-.map-controls p {
-    margin-bottom: 8px;
-  color: white;
+.controls-label {
+  font-family: var(--font-body);
   font-weight: bold;
+  color: var(--accent-pink);
 }
-.intro {
-    margin-bottom: 5px;
-  }
-  
-  .map-section {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 40px;
-  }
 
 .map-controls button {
-  background-color: #f06292; 
+  background-color: var(--accent-pink);
   border: none;
   border-radius: 999px;
-  color: #1a125b;
-  font-size: 1rem;
-  font-family: 'Lexend', sans-serif;
+  color: var(--bg-dark);
+  font-family: var(--font-body);
   font-weight: 500;
-  padding: 10px 24px;
+  padding: 0.6rem 1.5rem;
   cursor: pointer;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
 }
 
 .map-controls button:hover {
-    background-color: transparent;
-    color: white; 
-    border: 2px solid white;
-  }
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
 
 .map-controls button.active {
-  background-color: #1a125b;
-  color: white;
-  border: 3px solid white;
+  background-color: var(--bg-dark);
+  color: #fff;
+  border: 3px solid #fff;
   font-weight: 600;
 }
 
-
-/* ---------------------------------- */
-/*              MOBILE                */
-/* ---------------------------------- */
-@media (max-width: 768px) {
-    body {
-      padding: 40px;
-      align-items: left;
-    }
-  
-    .logo {
-        
-      width: 350px;
-      top: 15px;
-      left: 15px;
-    }
-  
-    h1 {
-      font-size: 2.5rem;
-      text-align: left;
-
-    }
-  
-    .intro,
-    p,
-    #timestamp {
-      text-align: left;
-      margin-left: left;
-      margin-right: auto;
-    }
-  
-    .map-section {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-  
-    .map-container {
-      width: 80vw;
-      height: 30vh;
-      margin: 0 auto;
-    }
-  
-
-.map-controls {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  justify-items: center;
+/* Timestamp */
+.timestamp {
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 1rem;
 }
-  
-    .map-controls button {
-      width: 100%;
-      max-width: 300px;
-      text-align: center;
-    }
+
+/* Responsive adjustments for typical laptop widths */
+@media (max-width: 1200px) {
+  body {
+    padding: 20px 20px 20px 60px;
   }
+  h1 {
+    font-size: 2.5rem;
+    margin: 100px 0 0;
+  }
+}
+
+/* Existing mobile query kept */
+@media (max-width: 768px) {
+  body {
+    padding: 40px;
+    align-items: flex-start;
+  }
+
+  .logo {
+    width: 200px;
+    top: 15px;
+    left: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-top: 120px;
+  }
+
+  .map-container {
+    width: 80vw;
+    height: 30vh;
+  }
+
+  .map-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    justify-items: center;
+  }
+
+  .map-controls button {
+    width: 100%;
+    max-width: 300px;
+  }
+}

@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>follow-ISS</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-  <link href="https://fonts.googleapis.com/css2?family=K2D:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Follow ISS</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
 
-    
-    <img src="./Pics/logo.png" alt="ISS Logo" class="logo" />
-    <h1>In an Orbit far far away...</h1>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=K2D:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet" />
 
-    <div class="intro">
-      <p>Follow our international space station on her journey around our home planet </p>
-    </div>
+    <!-- Project Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="./images/logo.png" alt="ISS Logo" class="logo" />
+      <h1>In an Orbit far far away...</h1>
+      <p class="intro">Follow our international space station on her journey around our home planet</p>
+    </header>
 
-    <div class="map-section">
+    <section class="iss-tracker">
       <div class="map-container">
-        <div id="map"></div>
+        <div id="map" class="map"></div>
       </div>
-      
-      <div class="map-controls">
-        <p><strong style="color: #f06292;">Map Design:</strong></p>
-        <button onclick="setMap('dark')">Night Mode</button>
-        <button onclick="setMap('light')">Day Mode</button>
-        <button onclick="setMap('satellite')">Satellite View</button>
-        <button onclick="setMap('flat')">Flat Map</button>
-      </div>
-    </div>
+      <nav class="map-controls" aria-label="Map Design Controls">
+        <p class="controls-label">Map Design:</p>
+        <button class="js-set-map" data-mode="dark">Night Mode</button>
+        <button class="js-set-map" data-mode="light">Day Mode</button>
+        <button class="js-set-map" data-mode="satellite">Satellite View</button>
+        <button class="js-set-map" data-mode="flat">Flat Map</button>
+      </nav>
+    </section>
 
-  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-  <script src="script.js"></script>
+    <div id="timestamp" class="timestamp">Last refresh: loading...</div>
 
-  <div id="timestamp" style="margin-top: 10px; font-size: 0.9rem; color: white;">
-    Last refresh: loading...
-  </div>
-  
+    <!-- Leaflet & Project Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" defer></script>
+    <script src="./js/tracker.js" defer></script>
   </body>
-  </html>
+</html>
